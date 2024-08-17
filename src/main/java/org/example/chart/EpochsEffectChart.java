@@ -12,9 +12,9 @@ import org.jfree.data.xy.DefaultXYDataset;
 
 import javax.swing.*;
 
-public class AIResultChart extends JFrame {
+public class EpochsEffectChart extends JFrame {
 
-    public AIResultChart() {
+    public EpochsEffectChart() {
         // 创建示例数据
         double[][] data0 = {{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}, {20.9300, 23.1344, 20.3166, 21.8605, 22.4493, 21.5542, 19.6988, 22.7515, 23.5867, 23.3488, 20.6313, 20.3037, 20.4639, 22.2744}};
         double[][] data1 = {{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}, {19.8466, 21.8463, 20.6591, 20.9111, 20.3685, 20.3969, 22.8151, 21.3268, 21.7153, 20.4450, 20.1288, 21.3455, 20.7371, 21.0411}};
@@ -81,7 +81,7 @@ public class AIResultChart extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            AIResultChart example = new AIResultChart();
+            EpochsEffectChart example = new EpochsEffectChart();
             example.setVisible(true);
         });
     }

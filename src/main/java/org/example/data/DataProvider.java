@@ -4,6 +4,7 @@ import java.util.List;
 
 public class DataProvider {
 
+    // TODO: add more data here.
     public static List<DataBean> provideData() {
         return List.of(
                 new DataBean(Weather.Sunny, Weekday.Monday, 17.1),
