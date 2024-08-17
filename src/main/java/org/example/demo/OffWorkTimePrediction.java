@@ -1,4 +1,4 @@
-package org.example;
+package org.example.demo;
 
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
@@ -7,17 +7,17 @@ import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
+import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.learning.config.Sgd;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
-import org.nd4j.linalg.dataset.DataSet;
 
-public class NumberPrediction {
+public class OffWorkTimePrediction {
 
     public static void main(String[] args) {
         // 示例数据：前面的数字和目标值
-        double[][] featuresArray = {{1}, {2}, {3}, {4}}; // 输入特征（前面的数字）
-        double[][] labelsArray = {{2}, {3}, {4}, {5}}; // 目标值（下一个数字）
+        double[][] featuresArray = {{1}, {1}, {1}, {1}, {1}, {1}, {1}}; // 相同的输入，因为是同一个人。后续考虑按照星期几分组
+        double[][] labelsArray = {{18.0}, {19.0}, {18.5}, {20.5}, {18.0}, {18.5}, {18.5}}; // 输出为这个人的下班时间
 
         // 创建INDArray
         INDArray features = Nd4j.create(featuresArray);
@@ -51,7 +51,7 @@ public class NumberPrediction {
         }
 
         // 预测下一个数字
-        double[] newInput = {5}; // 需要预测的下一个数字
+        double[] newInput = {1}; // 预测这个人的下班时间
         INDArray input = Nd4j.create(new double[][]{newInput});
         INDArray prediction = model.output(input);
 
